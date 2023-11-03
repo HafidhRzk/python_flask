@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/index")
 
-def indexnya(): 
+def index(): 
     return "Halo dek!"
 
 if __name__ == "__main__":
