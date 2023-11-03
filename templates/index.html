@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Index Page</title>
 </head>
-<body>
+{% extends "main.html" %}
+{% block content %}
     <h1>Sample String</h1>
     <p>{{ str }}</p>
     <h1>Sample Integer</h1>
     <p>{{ int }}</p>
+    <h1>Sample Set Variable</h1>
+    <div>
+        {% set newvar = "Hari Ini" %}
+        <p>{{ newvar }}</p>
+    </div>
     <h1>Sample For Loop</h1>
     <div>
         {% for data in arr %}
@@ -31,14 +33,14 @@
         {% for data in arr %}
             <li>
                 {% if "minggu" in data %}
-                kalo {{ data }} Libur
+                kalo {{ newvar }} {{ data }} Libur
                 {%elif "sabtu" in data %}
-                kalo {{ data }} Setengah Hari
+                kalo {{ newvar }} {{ data }} Setengah Hari
                 {% else %}
-                kalo {{ data }} Masuk
+                kalo {{ newvar }} {{ data }} Masuk
                 {% endif %}
             </li>
         {% endfor %}
     </div>
 </body>
-</html>
+{% endblock %}
