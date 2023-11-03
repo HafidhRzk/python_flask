@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sample String</h1>
+    <p>{{ str }}</p>
+    <h1>Sample Integer</h1>
+    <p>{{ int }}</p>
+    <h1>Sample For Loop</h1>
+    <div>
+        {% for data in arr %}
+            <li>{{ data }}</li>
+        {% endfor %}
+    </div>
+    <h1>Sample Else If</h1>
+    <div>
+        {% if ifsamp == "benar" %}
+        <p>Harusnya ini {{ ifsamp }}</p>
+        {%elif ifsamp == "salah" %}
+        <p>Lah kalo ini {{ ifsamp }}</p>
+        {%else%}
+        <p>Nah ini baru {{ ifsamp }}</p>
+        {% endif %}
+    </div>
+    <h1>Sample For Loop with Condition</h1>
+    <div>
+        {% for data in arr %}
+            <li>
+                {% if "minggu" in data %}
+                kalo {{ data }} Libur
+                {%elif "sabtu" in data %}
+                kalo {{ data }} Setengah Hari
+                {% else %}
+                kalo {{ data }} Masuk
+                {% endif %}
+            </li>
+        {% endfor %}
+    </div>
+</body>
+</html>
