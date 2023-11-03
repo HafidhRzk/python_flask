@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -21,6 +21,16 @@ def about():
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+
+@app.route("/details/<value>")
+def details(value):
+    # return render_template("details.html").format(value)
+    return "Ini id = {}, Go to <a href='/index'>Index</a> Page".format(value)
+
+@app.route("/params")
+def params():
+    data = request.args.get("querystring")
+    return "Ini param = {}, Go to <a href='/index'>Index</a> Page".format(data)
 
 if __name__ == "__main__":
     app.run(debug=True)

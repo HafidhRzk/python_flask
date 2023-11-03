@@ -39,11 +39,14 @@
     }
   </style>
   <body>
+    {% set random = 12 %}
     <div class="topnav">
       <a class="active" href="/">Base</a>
       <a href="/index">Index</a>
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
+      <a href="/details/{{ random }}">Details</a>
+      <a href="/params?querystring=wkwkw">Params</a>
     </div>
     {% block content %}{% endblock %}
   </body>
