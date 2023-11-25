@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "token"
 
 @app.route("/")
 def base():
